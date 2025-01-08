@@ -25,7 +25,7 @@ bwa index data/chr6/hg38.chr6.fna
 ```
 
 ## Set up data directory variable
-Edit the variable `$DATADIR` within [`get-hla-reads`](scripts/get-hla-reads.sh) to point to the directory containing sequencing reads (`fastq` files). In this case, `$DATADIR` points to `/data/CARD_proteomics/Psomagen/AN00022036`.
+Edit the variable `$DATADIR` within [`get-hla-reads.sh`](scripts/get-hla-reads.sh) to point to the directory containing sequencing reads (`fastq` files). In this case, `$DATADIR` points to `/data/CARD_proteomics/Psomagen/AN00022036`.
 
 
 ## Align reads
