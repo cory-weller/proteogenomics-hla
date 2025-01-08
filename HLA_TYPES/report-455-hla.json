@@ -1,0 +1,23 @@
+{
+ "subject_id": "455", 
+ "creation_time": "2025-01-08T16:16:41Z", 
+ "report_version": "1.2", 
+ "report_type": "hla_typing", 
+ "sample_id": "455", 
+ "hla": {
+  "alleles": [
+   "A*02:01", 
+   "A*26:01", 
+   "B*35:08", 
+   "B*38:01", 
+   "C*04:01", 
+   "C*12:03", 
+   "DPB1*09:01", 
+   "DPB1*10:01", 
+   "DQB1*03:01", 
+   "DQB1*03:01", 
+   "DRB1*11:01", 
+   "DRB1*11:04"
+  ]
+ }
+}
