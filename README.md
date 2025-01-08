@@ -12,7 +12,7 @@ mv sambamba ~/.local/bin
 ```
 
 ## Set up xHLA directory 
-This directory only needs to be set up once, it will be copied 
+This directory only needs to be set up once, it will be copied to `lscratch` for any given sample.
 ```bash
 git clone https://github.com/humanlongevity/HLA.git && cd HLA
 
