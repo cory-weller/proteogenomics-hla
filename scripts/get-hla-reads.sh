@@ -22,15 +22,6 @@ READ1="${DATADIR}/${SAMPLE}_1.fastq.gz"
 READ2="${DATADIR}/${SAMPLE}_2.fastq.gz"
 CHR6BAM="${SAMPLE}-hg38.chr6.bam"
 
-# ensure sambamba is in $PATH
-# e.g. set up sambama/0.8.2 binary and move to folder in $PATH like ~/.local/bin
-# wget -O sambamba.gz \
-#     'https://github.com/biod/sambamba/releases/download/v0.8.2/sambamba-0.8.2-linux-amd64-static.gz'
-# gunzip sambamba.gz
-# chmod +x sambamba
-# mv sambamba ~/.local/bin
-
-
 
 # work in lscratch
 TMPDIR="/lscratch/${SLURM_JOB_ID}"
@@ -38,18 +29,7 @@ cd "${TMPDIR}" || exit 1
 
 
 # # Set up xHLA directory 
-
 cp -r ${GITDIR}/HLA . && cd HLA
-# git clone https://github.com/humanlongevity/HLA.git && cd HLA
-
-
-# # retrieve chr6 assembly for mapping (not included in xHLA repo)
-# esearch -db nucleotide -query 'NC_000006.12' | efetch -format fasta > data/chr6/hg38.chr6.fna
-
-
-# # modify header to match xHLA expectation
-# sed -i 's/^>.*$/>chr6/' data/chr6/hg38.chr6.fna && \
-# bwa index data/chr6/hg38.chr6.fna
 
 
 # map reads to chr6 reference for xHLA genotyping
@@ -69,6 +49,3 @@ sambamba index ${SAMPLE}-HLA.bam
 cp ${SAMPLE}-HLA.bam ${DATADIR}/HLA_BAMS/${SAMPLE}-HLA.bam
 cp ${SAMPLE}-HLA.bam.bai ${DATADIR}/HLA_BAMS/${SAMPLE}-HLA.bam.bai
 
-
-# Run xHLA
-# xhla --sample_id KOLF2 --input_bam_path KOLF2-HLA.bam --output_path KOLF_HLA
